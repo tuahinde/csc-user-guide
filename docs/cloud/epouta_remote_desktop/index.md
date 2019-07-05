@@ -1,1 +1,12 @@
-<h1>ePouta Remote dekstop</h1>
+<h1>ePouta Remote Desktop</h1>
+
+<h2>Introduction to ePouta Remote Desktop</h2>
+
+
+<h2>Getting access to Remote Desktop</h2>
+
+
+<h2>Using Remote Desktop</h2>
+
+
+<h2>Further Information</h2>
