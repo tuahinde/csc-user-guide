@@ -50,6 +50,10 @@ nav:
             - Access the object storage from Taito: cloud/pouta/access-pouta-object-storage-from-taito.md
             - Quotas and billing: cloud/pouta/object-storage-quotas-and-billing.md
             - Common Error Messages: cloud/pouta/object-storage-error-msgs.md
+        - ePouta Remote Desktop:
+            - Introduction to ePouta Remote Desktop: cloud/epouta_remote_desktop/introduction.md
+            - Getting access to ePouta Remote Desktop: cloud/epouta_remote_desktop/getting_access_to_remote_desktop.md
+            - Using Remote Desktop: cloud/epouta_remote_desktop/using_remote_desktop.md
         - Images: cloud/pouta/adding-images.md
         - Orchestration with Heat: cloud/pouta/heat-orchestration.md
         - Container Orchestration in cPouta: cloud/pouta/pouta-container-orchestration.md
@@ -60,6 +64,23 @@ nav:
         - FAQ: cloud/pouta/faq.md
      - Rahti:
         - Contents: cloud/rahti/index.md
+        - Introduction:
+           - Background: cloud/rahti/introduction/background.md
+           - Service Description: cloud/rahti/introduction/service_description.md
+           - SLA: cloud/rahti/introduction/sla.md
+           - Technical Maturity: cloud/rahti/introduction/technical_maturity.md
+           - Getting access: cloud/rahti/introduction/access.md
+           - Resource billing: cloud/rahti/introduction/billing.md
+        - Usage:
+           - Getting started: cloud/rahti/usage/getting_started.md
+           - Projects and Quota: cloud/rahti/usage/projects_and_quota.md
+           - Security Guide: cloud/rahti/usage/security-guide.md
+           - Command Line Tool Usage: cloud/rahti/usage/cli.md
+        - Tutorials:
+           - Deploying applications from web console: cloud/rahti/tutorials/basic-console.md
+           - Core objects: cloud/rahti/tutorials/
+           - Utility objects: cloud/rahti/tutorials/
+           - Design patternsm: cloud/rahti/tutorials/
   - Data: data/index.md
   - Applications: apps/index.md
   - Support: support/index.md
