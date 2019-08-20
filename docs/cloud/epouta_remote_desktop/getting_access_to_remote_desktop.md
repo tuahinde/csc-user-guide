@@ -13,4 +13,4 @@ and straightforward:
 * ...
 
 
-(What to do to get a remote desktop icon to show in hammer?)
+<!---(What to do to get a remote desktop icon to show in hammer?)-->
