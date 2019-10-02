@@ -1,7 +1,7 @@
 # Getting access to Remote Desktop
 
 
-To use Pouta services you need to apply for access. See [research.csc.fi/pouta-application](https://research.csc.fi/pouta-application){:target="_blank"}
+To use Pouta services you need to apply for access, see [research.csc.fi/pouta-application](https://research.csc.fi/pouta-application){:target="_blank"}.
 
 When you have the access to Pouta services, the workflow to get to use the ePouta Remote Desktop is quite easy 
 and straightforward:
