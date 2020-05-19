@@ -2,7 +2,7 @@
 
 ## Description
 
-Pangolin (Phylogenetic Assignment of Named Global Outbreak LINeages) 
+Pangolin (Phylogenetic Assignment of Named Global Outbreak LINeages) is used to automatically assign standardized names for new Humand CoVid19 lineages.
 
 ## Availble
 
