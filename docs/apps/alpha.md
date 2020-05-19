@@ -79,6 +79,7 @@
 * [Orfeo ToolBox](otb.md) Open source toolbox for processing high resolution optical, multispectral and radar images
 * [PALM](palm.md) Meteorological model system for atmospheric and oceanic boundary-layer flows
 * [Pannzer](pannzer.md) Automatic protein annotation tool
+* [Pangolin](pangolin.md) Human Covid 19 lineage naming
 * [ParaView](paraview.md) Free open-source visualization application
 * [PDAL](pdal.md) open source command line application for point cloud translations and processing
 * [Picard](picard.md) Tools for working with SAM,BAM,CRAM and VCF files.
