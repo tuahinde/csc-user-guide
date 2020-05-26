@@ -55,7 +55,7 @@ body {
 }
 
 #welcometext {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     text-align: center;
 }
 
@@ -299,3 +299,16 @@ a[title="Home"] {
 .md-sidebar__scrollwrap::-webkit-scrollbar-thumb:hover {
     background: #888888;
 }
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
