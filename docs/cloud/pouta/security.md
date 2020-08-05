@@ -31,7 +31,12 @@ help.
 We hate spam as much as you do. Unfortunately, it is very easy to
 configure a mail server so that it can be used by spammers. So, please
 instead use an existing SMTP server outside the cloud (see
-section 6.1).
+[Additional services]).
+
+#### No Honeypots
+
+While Pouta environments can be used for non-intrusive cybersecurity
+research, running honeypots is strictly prohibited.
 
 #### Upgrade your kernel
 
@@ -94,4 +99,4 @@ Consider logging to a remote server as well.
 
 *Reused with kind permission from <a
 href="http://support.rc.nectar.org.au/technical_guides/security.html"
-class="external-link">NeCTAR</a>.*
+class="external-link">NeCTAR</a>, augmented where relevant.*
