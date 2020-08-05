@@ -31,7 +31,7 @@ help.
 We hate spam as much as you do. Unfortunately, it is very easy to
 configure a mail server so that it can be used by spammers. So, please
 instead use an existing SMTP server outside the cloud (see
-[Additional services]).
+[Additional services] ).
 
 #### No Honeypots
 
