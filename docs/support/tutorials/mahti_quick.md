@@ -125,14 +125,16 @@ variety of small to medium sized jobs including special resources.
 |Resource                | Mahti           | Puhti                             |
 |------------------------|-----------------|-----------------------------------|
 |Resources are granted   | By full nodes   | By finer detail (cores/memory/...)|
-|Minimum job size        | 128 cores (1 node)| 1 core (1/40 node)              |
-|Maxmimum job size (cores) | 200 nodes (*) (25600)| 100 (**) nodes (40000)           |
+|Minimum job size        | 1 node (128 cores) | 1 core (1/40 node)              |
+|Maxmimum job size (cores) | 200 nodes (*) (25600)| 100 (**) nodes (4000)           |
+|CPUs         | AMD Rome, 64 cores @ 2.6 GHz    | Intel Cascade Lake, 20 cores @ 2.1 GHz | 
+|Number of cores per node | 128 cores      | 40 cores |
 |Memory per node (average per core) | 245 GB (2 GB)   |  192 - 1500 GB (4 - 37 GB) |
-|GPUs                    | no              | yes                               |
-|Fast local disk         | no              | yes (NMVe)                        |
+|GPUs                    | no              | Nvidia V100 on 80 nodes              |
+|Fast local disk         | no              | yes - NVMe on 120 nodes              |
 |Preinstalled applications |  ~15          | ~120                              |
 
 <pre>
-(*) And even more via Grand Challenge calls.
+(*) More than 20 nodes requires a [scalability test](../../accounts/how-to-access-mahti-large-partition.md), more than 200 are available via future [Grand Challenge](https://research.csc.fi/grand-challenge-proposals) calls.
 (**) To be scaled down to 25 nodes in autumn 2020.
 </pre>
