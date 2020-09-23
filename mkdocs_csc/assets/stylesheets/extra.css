@@ -3,16 +3,16 @@ body {
 }
 
 .md-typeset a:link {
-    color: #0082BB;
+    color: #0079AD;
     font-weight: bold;
 }
 
 .md-typeset a:visited {
-    color: #0082BB;
+    color: #0079AD;
 }
 
 .md-typeset table a {
-    color: #0082BB !important;
+    color: #0079AD !important;
 }
 
 .md-sidebar {
@@ -229,7 +229,7 @@ body {
 .md-footer-meta__inner {
     font-size: 0.7rem;
     padding: 1rem 2rem;
-    background-color: #0082BB;
+    background-color: #0079AD;
     overflow: auto;
     box-shadow: 0 1.5px 3px rgba(0, 0, 0, .24), 0 3px 8px rgba(0, 0, 0, .05);
 }
