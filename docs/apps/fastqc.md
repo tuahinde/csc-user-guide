@@ -32,4 +32,4 @@ FastQC is a graphical software so if you use it in Puhti you will need a working
 
 *   [FastQC Homepage](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 
-* [CD-HIT home page](http://weizhongli-lab.org/cd-hit/)
+
