@@ -15,7 +15,6 @@ bleach==3.1.4
 certifi==2017.11.5
 click==7.1.2
 future==0.18.2
-gpg==1.10.0
 html5lib==1.0.1
 importlib-metadata==2.0.0
 Jinja2==2.11.2
@@ -29,7 +28,6 @@ Pygments==2.7.1
 pytoml==0.1.14
 PyYAML==5.3.1
 regex==2020.10.15
-rpm==4.14.2
 singledispatch==3.4.0.3
 six==1.15.0
 tornado==6.0.4

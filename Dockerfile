@@ -17,8 +17,6 @@ RUN yum -y install epel-release &&\
 RUN chgrp -R root ${ROOT_GROUP_DIRS} &&\
     chmod -R g+rwx ${ROOT_GROUP_DIRS}
 
-COPY . /tmp
-
 WORKDIR /tmp
 
 
