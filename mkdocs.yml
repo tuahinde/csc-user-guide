@@ -119,7 +119,7 @@ nav:
                    - Using arcrunner to run large job sets in FGCI: cloud/fgci/fgci-using-arcrunner-to-run-large-job-sets.md
                    - Using storage elements for data transport in FGCI: cloud/fgci/fgci-using-storage-elements-for-data-transport.md
              - The Grid Monitor: cloud/fgci/fgci-grid-monitor.md
-  - Data:
+  - Storage:
      - Moving data:
         - Copying files using scp: data/moving/scp.md
         - Graphical file transfer tools: data/moving/graphical_transfer.md
