@@ -44,7 +44,7 @@ sinteractive --account project_2001234 --time 48:00:00 --mem 8000 --tmp 100
 
 Available options for `sinteractive` in Puhti are:
 
-| Option        | Function                                                 | Default              | Max |
+| Option        | Function                                                 | Default              | Max in interactive queue|
 | ------------- | -------------------------------------------------------- | -------------------- |-----|
 | -i, --interactive | Set resource requests for the job interactively      |                      | |
 | -t, --time    | Run time reservation in minutes or in format d-hh:mm:ss. | 24:00:00             | 7-00:00:00 |
@@ -53,7 +53,7 @@ Available options for `sinteractive` in Puhti are:
 | -c, --cores   | Number of cores.                                         | 1                    | 4 |
 | -A, --account | Accounting project.                                      |                      | |
 | -d, --tmp     | Size of job specific $TMPDIR disk (in GiB).              | 32                   |640  |
-| -g, --gpu     | Number of GPU:s to reserve (max 4)                       | 0                    | 0 |
+| -g, --gpu     | Number of GPU:s to reserve                               | 0                    | 0 |
 
 ### sinteractive in Mahti
 
