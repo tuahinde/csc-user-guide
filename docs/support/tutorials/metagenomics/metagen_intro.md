@@ -16,7 +16,7 @@ The tools are part of the META-pipe analysis pipeline developed by Willassen et 
 ### 1.5. Assembly - Megahit
 ### 1.6. Quality assessment - MetaQUAST
 
-##  [2. Taxonomic profiling](./metageniomics_taxonomy.md)
+##  [2. Taxonomic profiling](./metagenomics_taxonomic_profiling.md)
 ### 2.1. Taxonomic classification using 16S rRNA sequences
 ### 2.2. Taxonomic classification using clade-specific marker genes
 
