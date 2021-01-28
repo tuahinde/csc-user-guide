@@ -69,7 +69,7 @@ head sample1_R1.fasta
 What is the main difference between a FASTQ and a FASTA file?
 
 j] Subsample 100 read pairs from two large paired FASTQ files using seqtk:
-text```
+```text
 seqtk sample -s100 sample1_R1.fastq.gz 100 > sample1_R1_red.fastq
 seqtk sample -s100 sample1_R2.fastq.gz 100 > sample1_R2_red.fastq
 ```
@@ -85,7 +85,7 @@ What is the average length of the sequence reads?
 
  
 
-1.2 Quality control - FastQC
+## 1.2 Quality control - FastQC
 We will perform the quality control of the raw data with FastQC using its graphical user interface. For more instructions and examples please see the FastQC manual  (html or pdf).
 
 a] Start FastQC by typing:
@@ -109,36 +109,42 @@ f] Illumina believes this effect is caused by the "not so random" nature of the 
 
 g] Have a look at the other modules, especially the ones marked with a red cross. Can you say something about the duplication level, etc?
 
-1.3 Merge reads - SeqPrep
+## 1.3 Merge reads - SeqPrep
 a] In order to reduce the number of reads for the downstream tools/analysis, we normally merge sequence read-pairs that overlap with a tool called SeqPrep. (SeqPrep was taken in use with command "module load biokit"):
-
+```text
 SeqPrep -f sample1_R1.fastq.gz -r sample1_R2.fastq.gz -1 sample1_seqprep_R1.fastq.gz -2 sample1_seqprep_R2.fastq.gz -s sample1_seqprep_merged.fastq.gz
+```
 b] How many merged reads were there?
-
+```text
 zcat sample1_seqprep_merged.fastq.gz | echo $((`wc -l`/4))
+```
 c] How many merged reads were there in the non-merged files?
-
+```text
 zcat sample1_seqprep_R1.fastq.gz | echo $((`wc -l`/4))
- 
+``` 
 
-1.4 Pre-processing next-generation sequence data - Trimmomatic
+## 1.4 Pre-processing next-generation sequence data - Trimmomatic
 Trimmomatic is a fast, multithreaded filtering/trimming tool written in java. It can be used to trim and crop Illumina (FASTQ) data as well as to remove adapters. There are two major modes of the program: Paired end mode and Single end mode, therefore you will need to run the tool twice: once for the paired data, and once for the file with the merged reads (single end). For the full explanation of the parameters see manual.
 
 a] In the terminal window type:
-
+```text
 trimmomatic -h
+```
 This will display a list of options and parameter settings you can apply on your sequence data.
 
 The FastQC quality check showed that there was an enrichment of certain Kmers in the ~12 first residues of the reads. The quality of the bases also dropped toward the end of the reads. In addition there were some duplication in the dataset. Use Trimmomatic to trim the reads:
 
 b] You must specify both fastq files as input (-fastq and –fastq2). In addition, filter out reads which have average quality below phred score 20 (AVGQUAL). Trim the reads in both ends: the first 12 nt in the 5' (HEADCROP), and all reads below threshold quality 3 in both ends the 3' (LEADING and TRAILING). Finally, filter out reads which areshorter than 75 nt (MINLEN):
-
+```text
 trimmomatic PE -phred33 sample1_seqprep_R1.fastq.gz -threads 4 sample1_seqprep_R2.fastq.gz sample1_seqprep_trimmomatic_R1.fastq.gz Discraded_trimmomatic_R1.fastq.gz sample1_seqprep_trimmomatic_R2.fastq.gz Discraded_trimmomatic_R2.fastq.gz AVGQUAL:20 HEADCROP:12 LEADING:3 TRAILING:3 MINLEN:75
+```
 c] You also need to trim the file containing the merged read pairs:
+```text
 trimmomatic SE -phred33 sample1_seqprep_merged.fastq.gz -threads 4 sample1_seqprep_merged_trimmomatic.fastq.gz AVGQUAL:20 HEADCROP:12 LEADING:3 TRAILING:3 MINLEN:75
+```
 d] Perform a FastQC quality control of the trimmed sequence data, and compare the preprocessed data with the raw data from the first FastQC run. What are the main differences?
 
-1.5 Assembly - Megahit
+## 1.5 Assembly - Megahit
 We will use the Megahit to assemble the trimmed data. Megahit is an ultra fast assembly tool for metagenomics data. You can read more about Megahit in the manual.
 
 a] Megahit is not included in biokit module. To use it, unload biokit module with command:
@@ -149,20 +155,24 @@ Then load the Megahit environment with commands:
 module load intel/16.0.0
 module load megahit
 b] Assembling metagenomic data can be very resource demanding. Note that you should not run Megahit in the login nodes of Taito.If you are running the command interactively in taito-shell.csc.fi, you can use 128 GB RAM and 4 cores, which is quite good when the metagenome is not very complex, hence assembling over 2 million reads will take about 20 minutes. For larger analysis task we recommend running Megahit as a batch job with 12 cores.
-
+```text
 megahit -1 sample1_seqprep_trimmomatic_R1.fastq.gz -2 sample1_seqprep_trimmomatic_R2.fastq.gz -r sample1_seqprep_merged_trimmomatic.fastq.gz -t 4 -o sample1_trim
+```
+
 c] When the assembly is done, go the the directory where the assembled contigs are:
-
+```text
 cd sample1_trim
+```
 d] Since you will be working with several assemblies, rename the FASTA file with the contigs to sample1_trim.fasta:
-
+```text
 mv final.contigs.fa sample1_trim.fasta
+```
 e] Count the number of contigs in the fasta file:
-
+```text
 grep -c "^>" sample1_trim.fasta
- 
+``` 
 
-1.6 Quality assessment - MetaQUAST
+## 1.6 Quality assessment - MetaQUAST
 MetaQUAST evaluates and compares metagenome assemblies based on alignments to close references. It is based on the QUAST genome quality assessment tool, but addresses features specific for metagenome datasets. The tool will divide all contigs into groups aligned to each reference genome they align to. For comparing purposes we have pre-run the assembly of the same data using
 
 only on the raw (untrimmed) data
@@ -171,25 +181,29 @@ using a different assembler called MetaSPAdes.
 The contig files are located in directory /proj/csc/biosci/metagenomics/assemblies/.
 
 a] Create a directory called assemblies in the metagenomics directory, and copy the assembly you made with the trimmed data to this directory. Execute the following commands when you are in the directory containing the assembly sample1_trim.fasta:
-
+```text
 mkdir ../assemblies
 cp sample1_trim.fasta ../assemblies
+```
 b] Then move to this directory and copy the pre-calculated assemblies there:
-
+```text
 cd ../assemblies
 cp /proj/csc/biosci/metagenomics/assemblies/* ./
 ls -l
+```
 In this directory, there is also a file named reference_list.txt. This text file contains a pre-made list of reference genomes we know are in the sample. To save compute time, you can provide this list of reference genomes together with the input files. Alternatively, MetaQUAST can produce a reference list by identifying which species are present based on searching for 16S rRNA sequences in the contigs. It will then download the reference genomes from NCBI, and align the contigs against these genomes. This will make the run time longer.
 
 c] Run MetaQUAST on these assemblies and evaluate which performs best/worst:
 
+```text
 module load biokit
 metaquast.py sample1_trim.fasta sample1_raw.fasta  sample1_500.fasta sample1_metaspades.fasta --references-list reference_list.txt -t 4
+```
 d] Open the MetaQUAST report in a web browser. The report locates in subfolder quast_results/results_date_and_index/combined_reference. (Note that you must use NoMachine connection to run Firefox remotely from Taito)
-
+```text
 cd quast_results/results_date_and_index/combined_reference
 firefox --no-remote "file:///$(pwd)/report.html"
- 
+``` 
 
 Which of the assemblies is the largest and the smallest (in bp)?
 Which of the assemblies produces the longest contig?
@@ -199,8 +213,9 @@ Which method will you choose for this data and why?
  
 
 e] Icarus generates contig size viewer and one or more contig alignment viewers. Contig size viewer contigs ordered from longest to shortest. Open the Icarus.html in a web browser and go to the contig size viewer.
-
+```text
 firefox --no-remote "file:///$(pwd)/icarus.html"
+```
 Try to fade contigs shorter than 10000 bp
 Why do you think so many of the largest contigs are tagged as misassembled?
 How many bp is the longest correctly aligned contig?
