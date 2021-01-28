@@ -1,4 +1,5 @@
-Metagenomics analysis pipeline in Taito
+## Metagenomics analysis pipeline in Puhti
+
 CSC hosted a hands-on  Metagenomics data analysis course in April 2017. The analysis tools used during the course were installed in virtual machines in the CSC cPouta cloud. As the course installation is not available any more, we have installed the same analysis tools for CSC users in the Taito cluster.
 
 This document is based on the exercises developed by Espen Robertsen and Erik Hjerde for the course. We recommend using the taito-shell.csc.fi through the NoMachine remote desktop for the exercises.
@@ -7,24 +8,24 @@ The tools are part of the META-pipe analysis pipeline developed by Willassen et 
 
 
 
-1.  Quality control, filtering, assembly & validation
-1.1. Setting up the environment and obtaining sample data
-1.2. Quality control - FastQC
-1.3. Merge paired reads - SeqPrep
-1.4. Pre-processing - Trimmomatic
-1.5. Assembly - Megahit
-1.6. Quality assessment - MetaQUAST
+## [1.  Quality control, filtering, assembly & validation](./metagenomics_quality.md)
+### 1.1. Setting up the environment and obtaining sample data
+### 1.2. Quality control - FastQC
+### 1.3. Merge paired reads - SeqPrep
+### 1.4. Pre-processing - Trimmomatic
+### 1.5. Assembly - Megahit
+### 1.6. Quality assessment - MetaQUAST
 
-2. Taxonomic profiling
-2.1. Taxonomic classification using 16S rRNA sequences
-2.2. Taxonomic classification using clade-specific marker genes
+##  [2. Taxonomic profiling](./metageniomics_taxonomy.md)
+### 2.1. Taxonomic classification using 16S rRNA sequences
+### 2.2. Taxonomic classification using clade-specific marker genes
 
-3. Comparison & Visualization
-3.1. Compare taxonomic profiles of the same sample obtained with 16S rRNA or Clade-specific markers
-3.2. Compare taxonomic profiles of two different samples using Krona Compare
-3.3. Run MetaQUAST on the assemblies of two different samples
+## [3. Comparison & Visualization](./metagenomics_comparison.md)
+### 3.1. Compare taxonomic profiles of the same sample obtained with 16S rRNA or Clade-specific markers
+### 3.2. Compare taxonomic profiles of two different samples using Krona Compare
+### 3.3. Run MetaQUAST on the assemblies of two different samples
 
-4. Functional annotation
-4.1 Accessing META-pipe with the support of CSC
-4.2 Performing the analysis
-4.3 Related materials
+## [4. Functional annotation](./metagenomics_annotation.md)
+### 4.1 Accessing META-pipe with the support of CSC
+### 4.2 Performing the analysis
+### 4.3 Related materials
